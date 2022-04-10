@@ -33,4 +33,14 @@ Sub StockData()
                     Stock_Volume = Stock_Volume + Cells(i, 7).Value
                 End If
             Next i
+'Color formatting for yearlychnage
+        Dim lastrow As Long
+            lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+        For j = 2 To lastrow
+            If Cells(j, 10).Value > 0 Then
+                Cells(j, 10).Interior.ColorIndex = 4
+            Else
+                Cells(j, 10).Interior.ColorIndex = 3
+            End If
+        Next j
 End Sub
